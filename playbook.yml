@@ -1,0 +1,26 @@
+- hosts: all
+  roles:
+    - role: geerlingguy.pip
+      become: yes
+
+  tasks:
+    - name: import env
+      tags: deploy
+      ansible.builtin.template:
+        src: ./templates/redmine.env.j2
+        dest: .env
+        mode: "0644"
+    - name: install redmine
+      tags: deploy
+      become: yes
+      community.docker.docker_container:
+        name: redmine-srv
+        image: redmine:5.0.5
+        ports:
+          - "80:3000"
+        env_file: .env
+
+- hosts: webservers
+  roles:
+    - role: datadog.datadog
+      become: yes

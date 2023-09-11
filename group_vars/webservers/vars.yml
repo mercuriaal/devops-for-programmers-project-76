@@ -1,0 +1,10 @@
+datadog_api_key: "{{ vault_datadog_api_key }}"
+datadog_site: datadoghq.eu
+datadog_checks:
+  http_check:
+    init_config:
+    instances:
+      - name: check redmine
+        url: "http://localhost:80"
+        timeout: 10
+        method: GET
