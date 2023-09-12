@@ -5,7 +5,9 @@
 
 ОС: Linux, macOS
 
-Ansible 2.15.2 ([Гайд по установке](https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html))
+[Ansible](https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html) 2.15.2
+
+[GNU Make](https://www.gnu.org/software/make/#download) 4.3
 
 ### Команды для работы с проектом:
 
